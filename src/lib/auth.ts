@@ -5,11 +5,8 @@ import GoogleProvider from "next-auth/providers/google"
 import { fetchRedis } from "@/helpers/redis"
 
 function getGoogleCredentials(){
-    // const clientId = process.env.GOOGLE_CLIENT_ID
-    // const clientSecret = process.env.GOOGLE_CLIENT_SECRET
-
-    const clientId = '172463910138-l46bte44mq0vmcgke9npljha36h5nlhc.apps.googleusercontent.com'
-    const clientSecret = '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'
+    const clientId = process.env.GOOGLE_CLIENT_ID
+    const clientSecret = process.env.GOOGLE_CLIENT_SECRET
 
     if(!clientId || clientId.length === 0){
         throw new Error("Missing GOOGLE_CLIENT_ID")
