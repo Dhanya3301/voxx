@@ -1,5 +1,5 @@
 import FriendRequestSidebarOptions from "@/components/FriendRequestSidebarOptions";
-import { Icons, type Icon } from "@/components/Icons";
+import { Icons, Icon } from "@/components/Icons";
 import MobileChatLayout from "@/components/MobileChatLayout";
 import SidebarChatList from "@/components/SidebarChatList";
 import SignOutButton from "@/components/SignOutButton";
@@ -16,6 +16,11 @@ import { FC, ReactNode } from "react";
 interface LayoutProps {
   children: ReactNode;
 }
+
+export const metaData = {
+  title: "Voxx | Dashboard",
+  description: "Your dashboard",
+};
 
 const sidebarOptions: SidebarOption[] = [
   {
@@ -51,7 +56,7 @@ const Layout = async ({ children }: LayoutProps) => {
       </div>
       <div className="hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
         <Link href="/dashboard" className="flex h-16 shrink-0 items-center">
-          <Icons.Logo className="h-8 w-auto text-indigo-600" />{" "}
+          <Icons.Logo className="h-8 w-auto text-indigo-600" />
           <span className="pl-6 text-lg font-bold text-slate-900">Voxx</span>
         </Link>
         {friends.length > 0 ? (

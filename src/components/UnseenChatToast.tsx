@@ -1,5 +1,4 @@
 import { chatHrefConstructor, cn } from "@/lib/utils";
-import { sendResponse } from "next/dist/server/image-optimizer";
 import Image from "next/image";
 import { FC } from "react";
 import { toast, type Toast } from "react-hot-toast";
@@ -57,10 +56,8 @@ const UnseenChatToast: FC<UnseenChatToastProps> = ({
       </a>
       <div className="flex border-l border-gray-200">
         <button
+          onClick={() => toast.dismiss(t.id)}
           className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          onClick={() => {
-            toast.dismiss(t.id);
-          }}
         >
           Close
         </button>

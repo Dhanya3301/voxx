@@ -1,15 +1,15 @@
 "use client";
 
-import { Dialog, Transition } from "@headlessui/react";
+import { Transition, Dialog } from "@headlessui/react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { FC, Fragment, useEffect, useState } from "react";
-import Button, { buttonVariants } from "./ui/Button";
 import { Icons } from "./Icons";
-import SidebarChatList from "./SidebarChatList";
-import FriendRequestSidebarOptions from "./FriendRequestSidebarOptions";
-import Image from "next/image";
 import SignOutButton from "./SignOutButton";
+import Button, { buttonVariants } from "./ui/Button";
+import FriendRequestSidebarOptions from "./FriendRequestSidebarOptions";
+import SidebarChatList from "./SidebarChatList";
 import type { Session } from "next-auth";
 import type { SidebarOption } from "@/types/typings";
 import { usePathname } from "next/navigation";

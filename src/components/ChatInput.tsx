@@ -4,7 +4,7 @@ import { FC, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import Button from "./ui/Button";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 interface ChatInputProps {
   chatPartner: User;
@@ -14,7 +14,7 @@ interface ChatInputProps {
 const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [input, setinput] = useState<string>("");
+  const [input, setInput] = useState<string>("");
 
   const sendMessage = async () => {
     if (!input) return;
@@ -24,7 +24,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
     try {
       //   await new Promise((resolve) => setTimeout(resolve, 1000));
       await axios.post("/api/message/send", { text: input, chatId });
-      setinput("");
+      setInput("");
       textareaRef.current?.focus();
     } catch {
       toast.error("Something went wrong. Please try again later.");
@@ -46,7 +46,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
           }}
           rows={1}
           value={input}
-          onChange={(e) => setinput(e.target.value)}
+          onChange={(e) => setInput(e.target.value)}
           placeholder={`Message ${chatPartner.name}`}
           className="block w-full px-4 resize-none border-0 outline-none bg-transparent text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:py-1.5 sm:text-sm sm:leading-6"
         />
@@ -56,11 +56,11 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
           aria-hidden="true"
         >
           <div className="py-px">
-            <div className="h-9"></div>
+            <div className="h-9" />
           </div>
         </div>
         <div className="absolute right-0 bottom-0 flex justify-between py-2 pl-3 pr-2">
-          <div className="flex-shrink-0">
+          <div className="flex-shrin-0">
             <Button isLoading={isLoading} onClick={sendMessage} type="submit">
               Post
             </Button>

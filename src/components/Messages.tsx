@@ -2,7 +2,6 @@
 
 import { cn, toPusherKey } from "@/lib/utils";
 import type { Message } from "@/lib/validation/message";
-import { Divide } from "lucide-react";
 import { format } from "date-fns";
 import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -20,8 +19,8 @@ const Messages: FC<MessagesProps> = ({
   initialMessages,
   sessionId,
   chatId,
-  sessionImg,
   chatPartner,
+  sessionImg,
 }) => {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
 
@@ -57,7 +56,7 @@ const Messages: FC<MessagesProps> = ({
         const isCurrentUser = message.senderId === sessionId;
 
         const hasNextMessageFromSameUser =
-          messages[index - 1]?.senderId === messages[index]?.senderId;
+          messages[index - 1]?.senderId === messages[index].senderId;
 
         return (
           <div

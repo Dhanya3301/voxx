@@ -4,12 +4,12 @@ import { pusherClient } from "@/lib/pusher";
 import { chatHrefConstructor, toPusherKey } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import UnseenChatToast from "./UnseenChatToast";
 
 interface SidebarChatListProps {
-  sessionId: string;
   friends: User[];
+  sessionId: string;
 }
 
 interface ExtendedMessage extends Message {
@@ -17,17 +17,18 @@ interface ExtendedMessage extends Message {
   senderName: string;
 }
 
-const SidebarChatList: FC<SidebarChatListProps> = ({ sessionId, friends }) => {
+const SidebarChatList: FC<SidebarChatListProps> = ({ friends, sessionId }) => {
   const router = useRouter();
   const pathname = usePathname();
   const [unseenMessages, setUnseenMessages] = useState<Message[]>([]);
+  const [activeChats, setActiveChats] = useState<User[]>(friends);
 
   useEffect(() => {
     pusherClient.subscribe(toPusherKey(`user:${sessionId}:chats`));
     pusherClient.subscribe(toPusherKey(`user:${sessionId}:friends`));
 
-    const newFriendHandler = () => {
-      router.refresh();
+    const newFriendHandler = (newFriend: User) => {
+      setActiveChats((prev) => [...prev, newFriend]);
     };
 
     const chatHandler = (message: ExtendedMessage) => {
@@ -75,16 +76,16 @@ const SidebarChatList: FC<SidebarChatListProps> = ({ sessionId, friends }) => {
 
   return (
     <ul role="list" className="max-h-[25rem] overflow-y-auto -mx-2 space-y-1">
-      {friends.sort().map((friend) => {
+      {activeChats.sort().map((friend) => {
         const unseenMessagesCount = unseenMessages.filter((unseenMsg) => {
-          return unseenMsg.senderId === friend?.id;
+          return unseenMsg.senderId === friend.id;
         }).length;
         return (
-          <li key={friend?.id}>
+          <li key={friend.id}>
             <a
               href={`/dashboard/chat/${chatHrefConstructor(
                 sessionId,
-                friend?.id
+                friend.id
               )}`}
               className="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex items-center gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
             >
