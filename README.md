@@ -55,10 +55,6 @@ npm run dev
 
 Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request. Make sure to follow the [contributing guidelines](CONTRIBUTING.md).
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Acknowledgements
 
 - Thanks to the creators and maintainers of Next.js, React, Tailwind CSS, and Pusher for their incredible tools and resources.
@@ -66,6 +62,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any inquiries or support, please contact [your-email@example.com](mailto:your-email@example.com).
+For any inquiries or support, please contact [bhattdhanya65@gmail.com](mailto:bhattdhanya65@gmail.com).
 
 Enjoy messaging with Voxx! 🚀
