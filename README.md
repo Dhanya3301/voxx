@@ -33,7 +33,7 @@ npm install
 4. Set up Pusher:
    - Sign up for a Pusher account at [https://pusher.com](https://pusher.com).
    - Create a new app in your Pusher dashboard.
-   - Copy your Pusher credentials (app ID, key, secret, and cluster) and paste them into your `.env.local` file. Use the provided `.env.example` file as a template.
+   - Copy your Pusher credentials (app ID, key, secret, and cluster) and paste them into your `.env.local` file. Use the provided `.env.local` file as a template.
 
 5. Start the development server:
 
