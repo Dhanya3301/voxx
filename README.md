@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Voxx
 
-## Getting Started
+Voxx is a real-time messaging application built using TypeScript, Next.js, React, Tailwind CSS, and Pusher for WebSocket communication. This repository houses the source code for Voxx, providing a platform for users to engage in real-time communication through messaging.
 
-First, run the development server:
+## Features
+
+- Real-time messaging: Engage in instant messaging with friends and colleagues.
+- User authentication: Securely log in and authenticate users.
+- Responsive design: Ensures an optimal viewing experience across a wide range of devices.
+
+## Installation
+
+To run Voxx locally, follow these steps:
+
+1. Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/voxx.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd voxx
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Set up Pusher:
+   - Sign up for a Pusher account at [https://pusher.com](https://pusher.com).
+   - Create a new app in your Pusher dashboard.
+   - Copy your Pusher credentials (app ID, key, secret, and cluster) and paste them into your `.env.local` file. Use the provided `.env.local` file as a template.
+
+5. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view Voxx.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- TypeScript: Provides static typing for enhanced code quality and developer productivity.
+- Next.js: Facilitates server-side rendering, routing, and other optimizations for React applications.
+- React: A JavaScript library for building user interfaces.
+- Tailwind CSS: A utility-first CSS framework for building custom designs quickly.
+- Pusher: A WebSocket service used for real-time communication.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request. Make sure to follow the [contributing guidelines](CONTRIBUTING.md).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Thanks to the creators and maintainers of Next.js, React, Tailwind CSS, and Pusher for their incredible tools and resources.
+- Special thanks to our contributors for their valuable input and contributions to this project.
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For any inquiries or support, please contact [bhattdhanya65@gmail.com](mailto:bhattdhanya65@gmail.com).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Enjoy messaging with Voxx! 🚀
