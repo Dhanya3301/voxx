@@ -70,7 +70,7 @@ const Messages: FC<MessagesProps> = ({
             >
               <div
                 className={cn(
-                  "flex flex-col space-y-2 text-base max-w-xs mx-2",
+                  "flex flex-col space-y-2 text-base max-w-xs mx-2 sm:mx-1",
                   {
                     "order-1 items-end": isCurrentUser,
                     "order-2 items-start": !isCurrentUser,
@@ -78,7 +78,7 @@ const Messages: FC<MessagesProps> = ({
                 )}
               >
                 <span
-                  className={cn("px-4 py-2 rounded-lg inline-block", {
+                  className={cn("px-4 sm:px-1 py-2 rounded-lg inline-block", {
                     "bg-blue-600 text-white": isCurrentUser,
                     "bg-zinc-600 text-zinc-200": !isCurrentUser,
                     "rounded-br-none":
