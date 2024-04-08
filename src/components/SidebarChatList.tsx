@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import UnseenChatToast from "./UnseenChatToast";
+import Image from "next/image";
 
 interface SidebarChatListProps {
   friends: User[];
@@ -87,8 +88,17 @@ const SidebarChatList: FC<SidebarChatListProps> = ({ friends, sessionId }) => {
                 sessionId,
                 friend.id
               )}`}
-              className="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex items-center gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+              className="text-zinc-400 hover:text-zinc-300 hover:bg-[#37393f] group flex ml-4 items-center gap-x-3 rounded-md p-3 text-sm leading-6 font-semibold"
             >
+              <div className="relative h-8 w-8 bg-[#303136] group-hover:bg-[#37393f]">
+                <Image
+                  fill
+                  referrerPolicy="no-referrer"
+                  className="rounded-full"
+                  src={friend.image || ""}
+                  alt="Your Profile Picture"
+                />
+              </div>
               {friend.name}
               {unseenMessagesCount > 0 ? (
                 <div className="bg-indigo-600 font-medium text-xs text-white w-4 h-4 rounded-full flex justify-center items-center">

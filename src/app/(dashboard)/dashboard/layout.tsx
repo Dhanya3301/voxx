@@ -45,7 +45,7 @@ const Layout = async ({ children }: LayoutProps) => {
   ).length;
 
   return (
-    <div className="w-full flex h-screen">
+    <div className="w-full flex bg-[#37393f] h-screen">
       <div className="md:hidden">
         <MobileChatLayout
           friends={friends}
@@ -54,13 +54,13 @@ const Layout = async ({ children }: LayoutProps) => {
           unseenRequestCount={unseenRequestCount}
         />
       </div>
-      <div className="hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
+      <div className="hidden md:flex h-full w-full max-w-xs bg-[#303136] rounded-tr-2xl rounded-br-2xl grow flex-col gap-y-5 overflow-y-auto  px-6">
         <Link href="/dashboard" className="flex h-16 shrink-0 items-center">
-          <Icons.Logo className="h-8 w-auto text-indigo-600" />
-          <span className="pl-6 text-lg font-bold text-slate-900">Voxx</span>
+          <Icons.Logo className="h-8 w-auto text-blue-600 font-extrabold text-3xl" />
+          <span className="pl-6 text-3xl font-bold text-blue-600">Voxx</span>
         </Link>
         {friends.length > 0 ? (
-          <div className="text-lg font-semibold leading-6 text-gray-400">
+          <div className="text-lg font-semibold leading-6 text-zinc-400">
             Your Chats
           </div>
         ) : null}
@@ -70,19 +70,19 @@ const Layout = async ({ children }: LayoutProps) => {
               <SidebarChatList sessionId={session.user.id} friends={friends} />
             </li>
             <li>
-              <div className="text-lg font-semibold leading-6 text-gray-400">
+              <div className="text-lg font-semibold leading-6 mb-4 text-gray-400">
                 Requests
               </div>
-              <ul role="list" className="-m-x-2 mt-2 space-y-1">
+              <ul role="list" className="-m-x-2 mb-2 space-y-1">
                 {sidebarOptions.map((option) => {
                   const Icon = Icons[option.Icon];
                   return (
                     <li key={option.id}>
                       <Link
                         href={option.href}
-                        className="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex gap-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                        className="text-zinc-400 -mb-4 bg-transparent hover:text-zinc-300 hover:bg-[#37393f] group flex gap-3 rounded-md p-2 text-sm leading-6 font-semibold"
                       >
-                        <span className="text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white">
+                        <span className="text-zinc-400 bg-transparent border-none group-hover:text-zinc-300 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium ">
                           <Icon className="h-4 w-4" />
                         </span>
                         <span className="truncate">{option.name}</span>
@@ -101,8 +101,8 @@ const Layout = async ({ children }: LayoutProps) => {
             </li>
 
             <li className="-mx-6 mt-auto flex items-center">
-              <div className="flex flex-1 items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900">
-                <div className="relative h-8 w-8 bg-gray-50">
+              <div className="flex flex-1 scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 overflow-x-auto scrolling-touch items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-zinc-400">
+                <div className="relative h-8 w-8 bg-[#303136]">
                   <Image
                     fill
                     referrerPolicy="no-referrer"
@@ -113,13 +113,15 @@ const Layout = async ({ children }: LayoutProps) => {
                 </div>
                 <span className="sr-only">Your Profile</span>
                 <div className="flex flex-col">
-                  <span aria-hidden="true">{session.user.name}</span>
+                  <span className="text-zinc-300" aria-hidden="true">
+                    {session.user.name}
+                  </span>
                   <span className="text-xs text-zinc-400" aria-hidden="true">
                     {session.user.email}
                   </span>
                 </div>
               </div>
-              <SignOutButton className="h-full aspect-square" />
+              <SignOutButton className="h-full text-zinc-300 aspect-square" />
             </li>
           </ul>
         </nav>

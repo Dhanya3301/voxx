@@ -3,6 +3,7 @@
 import Button from "@/components/ui/Button";
 import Google from "next-auth/providers/google";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 import { FC, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -21,22 +22,28 @@ const Page: FC = () => {
   }
   return (
     <>
-      <form className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full flex flex-col items-center max-w-md space-y-8 border-2 border-gray-400 rounded p-4">
+      <form className="flex fle-col min-h-screen bg-cover bg-[url(/login-bg.jpeg)] items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="w-full flex bg-purple-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 flex-col items-center max-w-md space-y-8 border-2 p-8">
           <div className="flex flex-col items-center gap-8">
-            Voxx
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+            <Image
+              width={150}
+              height={150}
+              src="/voxxx.png"
+              alt="Logo"
+              aria-hidden="true"
+            />
+            <h2 className="mt-4 text-center text-3xl font-bold tracking-tight text-gray-900">
               Welcome to Voxx
             </h2>
           </div>
           <div className="flex flex-col items-center gap-8">
             <input
-              className="focus:outline-none border-b-2  px-4 py-2"
+              className="focus:outline-none focus:border-zinc-700 placeholder-zinc-700 bg-transparent border-b-2 border-zinc-600 px-4 py-2"
               type="text"
-              placeholder="Enter your Gmail/Username"
+              placeholder="Gmail/Username"
             ></input>
             <input
-              className="focus:outline-none border-b-2  px-4 py-2"
+              className="focus:outline-0 focus:border-zinc-700 bg-transparent placeholder-zinc-700 border-b-2 border-zinc-600 px-4 py-2"
               type="text"
               placeholder="Enter your Password"
             ></input>

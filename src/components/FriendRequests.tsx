@@ -64,12 +64,14 @@ const FriendRequests: FC<FriendRequestsProps> = ({
   return (
     <>
       {friendRequests.length === 0 ? (
-        <p className="text-sm text-zinc-500">Nothing to show here</p>
+        <p className="text-sm text-zinc-500">Nothing to show here....</p>
       ) : (
         friendRequests.map((request) => (
           <div key={request.senderId} className="flex gap-4 items-center">
-            <UserPlus className="text-black" />
-            <p className="font-medium text-lg">{request.senderEmail}</p>
+            <UserPlus className="text-zinc-400" />
+            <p className="font-medium text-zinc-400 text-lg">
+              {request.senderEmail}
+            </p>
             <button
               onClick={() => acceptFriend(request.senderId)}
               aria-label="accept friend"
