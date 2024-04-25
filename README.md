@@ -2,6 +2,8 @@
 
 Voxx is a real-time messaging application built using TypeScript, Next.js, React, Tailwind CSS, and Pusher for WebSocket communication. This repository houses the source code for Voxx, providing a platform for users to engage in real-time communication through messaging.
 
+Visit the site here: https://voxx.vercel.app/
+
 ## Features
 
 - Real-time messaging: Engage in instant messaging with friends and colleagues.
